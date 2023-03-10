@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   
-  <title>Jstbob's Blogs</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
@@ -42,7 +42,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Jstbob's Blogs</a>
+        <a href="/" id="logo">Hexo</a>
       </h1>
       
     </div>
@@ -70,6 +70,165 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Sphinx项目部署到Github Pages" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/10/Sphinx%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Github%20Pages/" class="article-date">
+  <time class="dt-published" datetime="2023-03-10T14:23:04.985Z" itemprop="datePublished">2023-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/10/Sphinx%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Github%20Pages/">Sphinx项目部署到Github Pages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Sphinx项目部署到Github-Pages"><a href="#Sphinx项目部署到Github-Pages" class="headerlink" title="Sphinx项目部署到Github Pages"></a>Sphinx项目部署到Github Pages</h1><h2 id="创建Sphinx项目"><a href="#创建Sphinx项目" class="headerlink" title="创建Sphinx项目"></a>创建Sphinx项目</h2><p><a target="_blank" rel="noopener" href="https://www.sphinx-doc.org/en/master/tutorial/getting-started.html">官方入门</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#toctree-directive">.rst语法</a></p>
+<ol>
+<li><p>安装python环境和Sphinx包。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install sphinx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你正确安装了sphinx包，输入以下指令，将可以看到sphinx的版本号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sphinx-build --version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后创建文档布局。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sphinx-quickstart docs</span><br></pre></td></tr></table></figure>
+
+<p>命令成功后，会要求输入一些信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; Separate source and build directories (y/n) [n]：输入“ y”（不带引号）并按Enter。</span><br><span class="line">&gt; Project name：输入“ Lumache”（不带引号）并按 Enter。</span><br><span class="line">&gt; Author name(s)：输入“ Graziella”（不带引号）并按 Enter。</span><br><span class="line">&gt; Project release []：输入“ 0.1”（不带引号）并按 Enter。</span><br><span class="line">&gt; Project language [en]：将其留空（默认为英语）并按 Enter。&quot;zh_CN&quot;为中文。</span><br></pre></td></tr></table></figure>
+
+<p>按照上述提示输入信息后，你将得到这样一个目录结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docs</span><br><span class="line">├── build</span><br><span class="line">├── make.bat</span><br><span class="line">├── Makefile</span><br><span class="line">└── source</span><br><span class="line">   ├── conf.py</span><br><span class="line">   ├── index.rst</span><br><span class="line">   ├── _static</span><br><span class="line">   └── _templates</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="支持md文件"><a href="#支持md文件" class="headerlink" title="支持md文件"></a>支持md文件</h2><p>pip安装插件以支持md格式文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install sphinx_rtd_theme      //蓝色的主题</span><br><span class="line">pip install recommonmark</span><br><span class="line">pip install sphinx_markdown_tables</span><br></pre></td></tr></table></figure>
+
+<p>修改目录下”conf.py”文件，以支持插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extensions = [&quot;sphinx.ext.duration&quot;,&quot;recommonmark&quot;,&quot;sphinx_markdown_tables&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>更改主题（可选）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html_theme = &#x27;sphinx_rtd_theme&#x27; </span><br></pre></td></tr></table></figure>
+
+<p>更改Logo（可选）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html_logo = &#x27;./_static/logo.jpg&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加md文件"><a href="#添加md文件" class="headerlink" title="添加md文件"></a>添加md文件</h2><p>修改 “index.rst” 文件，添加 “readme.md” 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.. notes documentation master file, created by</span><br><span class="line">   sphinx-quickstart on Sun Mar  5 06:32:01 2023.</span><br><span class="line">   You can adapt this file completely to your liking, but it should at least</span><br><span class="line">   contain the root `toctree` directive.</span><br><span class="line"></span><br><span class="line">Welcome to notes&#x27;s documentation!</span><br><span class="line">=================================</span><br><span class="line"></span><br><span class="line">.. toctree::</span><br><span class="line">   :maxdepth: 2</span><br><span class="line">   :caption: Contents:</span><br><span class="line">   </span><br><span class="line">   readme.md</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Indices and tables</span><br><span class="line">==================</span><br><span class="line"></span><br><span class="line">* :ref:`genindex`</span><br><span class="line">* :ref:`modindex`</span><br><span class="line">* :ref:`search`</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行构建html"><a href="#运行构建html" class="headerlink" title="运行构建html"></a>运行构建html</h2><p>使用以下指令构建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sphinx-build -b html sourcedir builddir</span><br><span class="line">sourcedir：指定源文件目录；</span><br><span class="line">builddir：制定生成目录，这里由于github主页限制，必须制定&quot;docs&quot;文件夹；</span><br></pre></td></tr></table></figure>
+
+<p>也可简单构建，使用自带的 make.bat 工具构建 html 页面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make html</span><br></pre></td></tr></table></figure>
+
+<h2 id="上传github仓库"><a href="#上传github仓库" class="headerlink" title="上传github仓库"></a>上传github仓库</h2><p>作为<code>github.io</code>主页上传。</p>
+<p>在github仓库设置中，修改 branch 和主页根目录为<code>/docs</code>目录。</p>
+<p><a target="_blank" rel="noopener" href="https://coderefinery.github.io/documentation/gh_workflow/">actions工作流参考</a></p>
+<h2 id="解决加载不了-css、logo-的路径问题"><a href="#解决加载不了-css、logo-的路径问题" class="headerlink" title="解决加载不了 css、logo 的路径问题"></a>解决加载不了 css、logo 的路径问题</h2><p>解决方法：</p>
+<p>​		将一个空<code>.nojekyll</code>文件添加到 主页指定的根目录。</p>
+<p>​		在本例中，我是通过在<code>jstbob.github.io/docs</code>目录下创建文件解决的。</p>
+<p>问题发生原因：</p>
+<p>​		当您的站点使用以下划线开头的文件或目录时才需要这样做，因为 Jekyll 认为这些是特殊资源并且不会将它们复制到最终站点。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/10/Sphinx%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Github%20Pages/" data-id="clf2mot5i00002sq20mzp5zvd" data-title="Sphinx项目部署到Github Pages" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-创建windows驱动开发环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time class="dt-published" datetime="2023-03-10T14:23:04.985Z" itemprop="datePublished">2023-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">创建windows驱动开发环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="创建windows驱动开发环境"><a href="#创建windows驱动开发环境" class="headerlink" title="创建windows驱动开发环境"></a>创建windows驱动开发环境</h1><p>[toc]</p>
+<h2 id="安装VS2019"><a href="#安装VS2019" class="headerlink" title="安装VS2019"></a>安装VS2019</h2><p>​	1.下载VS2019社区版，<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/">下载链接</a>；</p>
+<p>​	2.运行安装工具，修改安装目录为d盘，选择开发组件和windows sdk，windows sdk选择10.0.18版本；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131938-88.PNG"></p>
+<h2 id="安装wdk"><a href="#安装wdk" class="headerlink" title="安装wdk"></a>安装wdk</h2><p>​	1.下载wdk，wdk版本要与上文中windows sdk版本保持一致，<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows-hardware/drivers/other-wdk-downloads">下载链接</a>；</p>
+<p>​	2.下载完成后运行安装程序，安装路径选择之前的windows sdk路径；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131939-4d.PNG"></p>
+<p>​	3.运行“D:\Windows Kits\10\Vsix\VS2019\WDK.vsix”，给vs2019安装驱动开发插件，路径为wdk的安装路径；</p>
+<h2 id="创建第一个驱动程序"><a href="#创建第一个驱动程序" class="headerlink" title="创建第一个驱动程序"></a>创建第一个驱动程序</h2><p>​	1.运行vs2019，新建一个空的驱动项目；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131940-dd.PNG"></p>
+<p>​	2.创建第一个驱动程序；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131941-e6.PNG"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;wdm.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//卸载函数</span></span><br><span class="line">VOID <span class="title function_">unload</span><span class="params">(PDRIVER_OBJECT pdriver)</span> </span><br><span class="line">&#123;</span><br><span class="line">	DbgPrint(<span class="string">&quot;unload is ok\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//驱动程序入口</span></span><br><span class="line">NTSTATUS <span class="title function_">DriverEntry</span><span class="params">(PDRIVER_OBJECT pdriver,PUNICODE_STRING path)</span></span><br><span class="line">&#123;</span><br><span class="line">	DbgPrint(<span class="string">&quot;driver inject is ok\n&quot;</span>);</span><br><span class="line">	pdriver-&gt;DriverUnload = unload;</span><br><span class="line">	<span class="keyword">return</span> STATUS_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	3.编译链接生成“.sys”驱动文件；</p>
+<h2 id="测试驱动程序"><a href="#测试驱动程序" class="headerlink" title="测试驱动程序"></a>测试驱动程序</h2><p>​	1.安装“<a target="_blank" rel="noopener" href="https://www.baidu.com/link?url=CvKvj5qAatdqb0EOcEkQJoAtT0gG-xm6pV5qyyYvPF3g-ApXvw_ry0RCWU0ceH6F&wd=&eqid=df6b99e60008ee1e00000006633cab8c">Oracle VM <em>VirtualBox</em></a>”虚拟机，在虚拟机上安装windows10系统；</p>
+<p>​	2.将tools文件下“signtools-v3.2.zip”、“driver monitor”、“DebugView.zip”、“签名证书.zip”拷贝到虚拟机中；</p>
+<p>​		signtools-v3.2.zip：给驱动程序添加数字签名；</p>
+<p>​		driver monitor工具：实现驱动程序的运行；</p>
+<p>​		DebugView.zip：microsoft官方查看程序的debug信息；</p>
+<p>​	3.调节系统时间为2011-10-01，为签名工具添加签名证书和签名规则；</p>
+<p>​		也可以直接关闭系统的驱动程序签名功能；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131941-0a.PNG"></p>
+<p>​	4.将“.sys”驱动程序拷贝到虚拟机中，给驱动程序添加内核数字签名；</p>
+<p>​	5.打开debugView窗口，设置监视内核调试信息；</p>
+<p>​	6.使用“driver monitor”工具运行驱动程序，如看到以下输出则视为成功：</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131943-0a.PNG"></p>
+<h2 id="安装windbg实现双机调试"><a href="#安装windbg实现双机调试" class="headerlink" title="安装windbg实现双机调试"></a>安装windbg实现双机调试</h2><p>​	1.若按上文安装vs2019选择了debug组件，则不需要安装windbg，没有则单独进行安装；</p>
+<p>​	2.目标系统运行“msconfig”，设置以调试模式引导，重启系统；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131944-41.PNG"></p>
+<p>​	3.按下图对“virtualbox”虚拟机串口进行设置；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131945-5a.PNG"></p>
+<p>​	4.设置windbg连接目标系统；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131945-b4.PNG"></p>
+<p>​	5.出现如下画面则表示双机调试连接成功；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131946-1c.PNG"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clf2mot5x00012sq26l7a58tm" data-title="创建windows驱动开发环境" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -151,6 +310,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/03/10/Sphinx%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Github%20Pages/">Sphinx项目部署到Github Pages</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">创建windows驱动开发环境</a>
+          </li>
         
           <li>
             <a href="/2023/03/10/hello-world/">Hello World</a>

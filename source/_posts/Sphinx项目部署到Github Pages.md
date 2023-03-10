@@ -1,3 +1,6 @@
+---
+title: Sphinx项目部署到Github Pages
+---
 # Sphinx项目部署到Github Pages
 
 ## 创建Sphinx项目
