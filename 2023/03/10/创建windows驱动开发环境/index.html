@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="创建windows驱动开发环境[toc] 安装VS2019​	1.下载VS2019社区版，下载链接； ​	2.运行安装工具，修改安装目录为d盘，选择开发组件和windows sdk，windows sdk选择10.0.18版本；  安装wdk​	1.下载wdk，wdk版本要与上文中windows sdk版本保持一致，下载链接； ​	2.下载完成后运行安装程序，安装路径选择之前的windows sd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="创建windows驱动开发环境[toc] 安装VS2019​	1.下载VS2019社区版，下载链接； ​	2.运行安装工具，修改安装目录为d盘，选择开发组件和windows sdk，windows sdk选择10.0.18版本；  安装wdk​	1.下载wdk，wdk版本要与上文中windows sdk版本保持一致，下载链接； ​	2.下载完成后运行安装程序，安装路径选择之前的windows sd">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131938-88.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131939-4d.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131940-dd.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131941-e6.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131941-0a.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131943-0a.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131944-41.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131945-5a.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131945-b4.PNG">
+<meta property="og:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131946-1c.PNG">
+<meta property="article:published_time" content="2023-03-10T14:23:04.985Z">
+<meta property="article:modified_time" content="2022-10-14T05:24:08.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131938-88.PNG">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-创建windows驱动开发环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time class="dt-published" datetime="2023-03-10T14:23:04.985Z" itemprop="datePublished">2023-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="创建windows驱动开发环境"><a href="#创建windows驱动开发环境" class="headerlink" title="创建windows驱动开发环境"></a>创建windows驱动开发环境</h1><p>[toc]</p>
+<h2 id="安装VS2019"><a href="#安装VS2019" class="headerlink" title="安装VS2019"></a>安装VS2019</h2><p>​	1.下载VS2019社区版，<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/">下载链接</a>；</p>
+<p>​	2.运行安装工具，修改安装目录为d盘，选择开发组件和windows sdk，windows sdk选择10.0.18版本；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131938-88.PNG"></p>
+<h2 id="安装wdk"><a href="#安装wdk" class="headerlink" title="安装wdk"></a>安装wdk</h2><p>​	1.下载wdk，wdk版本要与上文中windows sdk版本保持一致，<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows-hardware/drivers/other-wdk-downloads">下载链接</a>；</p>
+<p>​	2.下载完成后运行安装程序，安装路径选择之前的windows sdk路径；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131939-4d.PNG"></p>
+<p>​	3.运行“D:\Windows Kits\10\Vsix\VS2019\WDK.vsix”，给vs2019安装驱动开发插件，路径为wdk的安装路径；</p>
+<h2 id="创建第一个驱动程序"><a href="#创建第一个驱动程序" class="headerlink" title="创建第一个驱动程序"></a>创建第一个驱动程序</h2><p>​	1.运行vs2019，新建一个空的驱动项目；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131940-dd.PNG"></p>
+<p>​	2.创建第一个驱动程序；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131941-e6.PNG"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;wdm.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//卸载函数</span></span><br><span class="line">VOID <span class="title function_">unload</span><span class="params">(PDRIVER_OBJECT pdriver)</span> </span><br><span class="line">&#123;</span><br><span class="line">	DbgPrint(<span class="string">&quot;unload is ok\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//驱动程序入口</span></span><br><span class="line">NTSTATUS <span class="title function_">DriverEntry</span><span class="params">(PDRIVER_OBJECT pdriver,PUNICODE_STRING path)</span></span><br><span class="line">&#123;</span><br><span class="line">	DbgPrint(<span class="string">&quot;driver inject is ok\n&quot;</span>);</span><br><span class="line">	pdriver-&gt;DriverUnload = unload;</span><br><span class="line">	<span class="keyword">return</span> STATUS_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	3.编译链接生成“.sys”驱动文件；</p>
+<h2 id="测试驱动程序"><a href="#测试驱动程序" class="headerlink" title="测试驱动程序"></a>测试驱动程序</h2><p>​	1.安装“<a target="_blank" rel="noopener" href="https://www.baidu.com/link?url=CvKvj5qAatdqb0EOcEkQJoAtT0gG-xm6pV5qyyYvPF3g-ApXvw_ry0RCWU0ceH6F&wd=&eqid=df6b99e60008ee1e00000006633cab8c">Oracle VM <em>VirtualBox</em></a>”虚拟机，在虚拟机上安装windows10系统；</p>
+<p>​	2.将tools文件下“signtools-v3.2.zip”、“driver monitor”、“DebugView.zip”、“签名证书.zip”拷贝到虚拟机中；</p>
+<p>​		signtools-v3.2.zip：给驱动程序添加数字签名；</p>
+<p>​		driver monitor工具：实现驱动程序的运行；</p>
+<p>​		DebugView.zip：microsoft官方查看程序的debug信息；</p>
+<p>​	3.调节系统时间为2011-10-01，为签名工具添加签名证书和签名规则；</p>
+<p>​		也可以直接关闭系统的驱动程序签名功能；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131941-0a.PNG"></p>
+<p>​	4.将“.sys”驱动程序拷贝到虚拟机中，给驱动程序添加内核数字签名；</p>
+<p>​	5.打开debugView窗口，设置监视内核调试信息；</p>
+<p>​	6.使用“driver monitor”工具运行驱动程序，如看到以下输出则视为成功：</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131943-0a.PNG"></p>
+<h2 id="安装windbg实现双机调试"><a href="#安装windbg实现双机调试" class="headerlink" title="安装windbg实现双机调试"></a>安装windbg实现双机调试</h2><p>​	1.若按上文安装vs2019选择了debug组件，则不需要安装windbg，没有则单独进行安装；</p>
+<p>​	2.目标系统运行“msconfig”，设置以调试模式引导，重启系统；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131944-41.PNG"></p>
+<p>​	3.按下图对“virtualbox”虚拟机串口进行设置；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131945-5a.PNG"></p>
+<p>​	4.设置windbg连接目标系统；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131945-b4.PNG"></p>
+<p>​	5.出现如下画面则表示双机调试连接成功；</p>
+<p><img src="https://gitee.com/ningbocai/pictures/raw/master/image-20221014/131946-1c.PNG"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clf2mot5x00012sq26l7a58tm" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/10/Sphinx%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Github%20Pages/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/10/Sphinx%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0Github%20Pages/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/10/%E5%88%9B%E5%BB%BAwindows%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/10/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
